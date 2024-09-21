@@ -3,30 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Головна сторінка</title>
-    <link rel="stylesheet" href="styles/style.css">
+    <title>Гра на пам'ять - Реєстрація</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>Програмний код та його аналіз</h1>
-        <img src="images/logo.png" alt="Логотип">
-    </header>
+    <div class="container">
+        <h1>Ласкаво просимо до гри на пам'ять!</h1>
+        <form id="registrationForm">
+            <label for="username">Логін:</label>
+            <input type="text" id="username" name="username" required>
 
-    <nav>
-        <ul>
-            <li><a href="index.html">Головна</a></li>
-            <li><a href="forms/form.html">Опитувальник</a></li>
-            <li><a href="news/news.html">Статті</a></li>
-        </ul>
-    </nav>
+            <label for="email">Електронна пошта:</label>
+            <input type="email" id="email" name="email" required>
 
-    <section>
-        <h2>Ласкаво просимо на наш сайт</h2>
-        <p>Цей сайт присвячений аналізу програмного коду та його оптимізації.</p>
-    </section>
+            <label for="password">Пароль:</label>
+            <input type="password" id="password" name="password" required>
 
-    <footer>
-        <p>© 2024 Програмний код та його аналіз</p>
-    </footer>
+            <label for="confirmPassword">Підтвердьте пароль:</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" required>
+
+            <button type="button" onclick="register()">Зареєструватися</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
