@@ -1,16 +1,84 @@
-<form action="register.html" method="post">
-    <label for="login">Логін:</label>
-    <input type="text" id="login" name="login" required>
-    
-    <label for="email">Електронна пошта:</label>
-    <input type="email" id="email" name="email" required>
-    
-    <label for="password">Пароль:</label>
-    <input type="password" id="password" name="password" required>
-    
-    <label for="password2">Підтвердіть пароль:</label>
-    <input type="password" id="password2" name="password2" required>
-    
-    <button type="submit">Зареєструватися</button>
-    <button type="reset">Очистити</button>
-</form>
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Гадання</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/astro_logo.png" alt="Логотип">
+            <h1>Таро та Астрологія</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Головна</a></li>
+                <li><a href="registration.html">Реєстрація</a></li>
+                <li><a href="about.html">Про Таро</a></li>
+                <li><a href="survey.html">Опитувальник</a></li>
+                <li><a href="news.html">Новини</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <h2>Введіть головне питання, яке вас цікавить</h2>
+            <p>Задайте питання або оберіть з запропонованих</p>
+
+            <textarea class="question-input" placeholder="Введіть питання..."></textarea>
+
+            <div class="suggested-questions">
+                <button>Чи була зрада?</button>
+                <button>Чи любить він(вона) мене?</button>
+                <button>Як пережити розрив?</button>
+                <button>Як підвищити доходи?</button>
+                <button>Чи змінювати роботу?</button>
+                <button>Що я не бачу у своєму житті?</button>
+            </div>
+
+            <button class="continue-button">Продовжити</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>Контакти: sokrovolska.nadiia@chnu.edu.ua</p>
+        <p>© 2024 Таро та Астрологія. Всі права захищені.</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.suggested-questions button').forEach(button => {
+            button.addEventListener('click', () => {
+                document.querySelector('.question-input').value = button.innerText;
+            });
+        });
+
+        document.querySelector('.continue-button').addEventListener('click', () => {
+            const question = document.querySelector('.question-input').value.trim();
+            if (question) {
+                alert(`Ваше питання: "${question}" відправлено на обробку.`);
+            } else {
+                alert('Будь ласка, введіть питання.');
+            }
+        });
+    </script>
+    <style>
+        body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #18181a;
+    color: #f5f5f5;
+    font-family: Arial, sans-serif;
+    background-image: url('images/full_bg2.avif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+    </style>
+</body>
+</html>
